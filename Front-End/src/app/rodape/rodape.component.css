@@ -1,0 +1,17 @@
+.fa {
+    font-size: 35pt;
+    color: white;
+    padding: 10px;
+}
+
+.fa-facebook-square:hover {
+    color: #3B5998;
+}
+
+.fa-instagram:hover {
+    color: #c13584;
+}
+
+.fa-youtube-play:hover {
+    color: #c4302B;
+}

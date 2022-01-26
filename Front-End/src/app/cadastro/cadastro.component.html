@@ -1,0 +1,70 @@
+<div class="container-fluid">
+
+    <div class="row d-flex" id="conteudo">
+        <div class="col-md-6">
+
+            <div class="titulo">
+                <h1>Cadastrar</h1>
+                <p>Já tem uma conta? <span><a routerLink="/login">Faça o login.</a></span></p>
+            </div>
+
+            <form action="">
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="usuario" class="form-label">Nome Completo</label>
+                        <input [(ngModel)]='usuario.nomeCompleto' type="text" class="form-control" 
+                        id="usuario" name ="nomeCompleto" placeholder="Digite o seu nome...">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="tipo">Tipo de usuário</label>
+                        <select (change)='tipoUser($event)' class="form-control" name="tipo" id="tipo">
+                        <option>Escolha o tipo de perfil</option>
+                        <option value="1">Pai</option>
+                        <option value="2">Profissional</option>
+                        <option value="3">Criança</option>
+                    </select>
+                    </div>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input [(ngModel)]='usuario.email' type="email" class="form-control" 
+                    id="email" name='email' placeholder="name@example.com">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input (input)='confirmSenha($event)' type="password" class="form-control" id="senha" placeholder="Digite sua senha...">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="senhaConfirm" class="form-label">Confirma Senha</label>
+                        <input [(ngModel)]='usuario.senha' type="password" class="form-control" 
+                        id="senhaConfirm" name='senhaConfirm' placeholder="Confirme sua senha...">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="linkDaImagem" class="form-label">Foto de Perfil</label>
+                    <input [(ngModel)]='usuario.foto' type="text" class="form-control"
+                    id="linkDaImagem" name='linkImagem' placeholder="Insira o link da sua imagem de perfil">
+                </div>
+
+                <div class="row d-flex justify-content-between px-3">
+                    <button (click)='cadastro()' class="btn btn-info col-md-5">
+                    <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Cadastrar
+                </button>
+                    <button class="btn btn-danger col-md-5" routerLink="/login">
+                    <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Cancelar
+                </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div id="login-img"></div>
+        </div>
+    </div>
+
+</div>
+<div class="wave">
+
+</div>
