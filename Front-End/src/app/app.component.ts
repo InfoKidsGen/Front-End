@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'infokids';
+
+  constructor(
+    public authService: AuthService
+  ){
+
+  }
+
+  ngOnInit(){
+    window.scroll(0, 0)
+  }
 }

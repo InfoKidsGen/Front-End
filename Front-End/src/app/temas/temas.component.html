@@ -1,1 +1,74 @@
-<p>temas works!</p>
+<div class="container-fluid">
+
+    <div id="bg-tema" class="row">
+        <div class="col-md-12 text-white pt-4">
+
+            <h1 class="txtWelcome text-center">Temas </h1>
+            <h3 class="txtWelcome2 text-center">Veja aqui todos os temas cadastrados ou cadastre um novo: </h3>
+
+            <div class="row d-flex justify-content-center my-5">
+                <div class="col-md-3">
+
+                    <div class="form-group">
+                        <input [(ngModel)]="tema.assunto" type="text" class="form-control" name="assunto" id="assunto" placeholder="Assunto">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="tema.publicoAlvo" type="text" class="form-control" name="publicoAlvo" id="publicoAlvo" placeholder="Publico alvo">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="tema.idioma" type="text" class="form-control" name="idioma" id="idioma" placeholder="Idioma">
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button (click)="cadastrar()" class="btn btn-light">Cadastrar</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<div id="content" class="container">
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="text-center">Todos os temas</h2>
+        </div>
+    </div>
+
+    <div class="row my-4 d-flex justify-content-center">
+        <div class="col-md-6 ">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Assunto</th>
+                        <th scope="col">Publico alvo</th>
+                        <th scope="col">Idioma</th>
+                        <th scope="col" class="text-center">Funções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let tema of listaTemas'>
+                        <th>{{tema.id}}</th>
+                        <td>{{tema.assunto}}</td>
+                        <td>{{tema.publicoAlvo}}</td>
+                        <td>{{tema.idioma}}</td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn btn-info mr-2" [routerLink]="['/tema-edit', tema.id]"><i class="fa fa-pencil-square-o mr-2"></i>Editar</button>
+                            <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]"><i class="fas fa-trash-alt mr-2"></i>Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

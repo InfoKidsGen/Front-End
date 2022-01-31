@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   
   constructor(
 
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
 
   ) { }
 
@@ -32,10 +34,7 @@ export class LoginComponent implements OnInit {
         environment.nomeCompleto = this.usuarioLogin.nomeCompleto
         environment.foto = this.usuarioLogin.foto
 
-        console.log('id' + environment.id)
-        console.log('token' + environment.token)
-        console.log('nomeCompleto' + environment.nomeCompleto)
-        console.log('foto' + environment.foto)
+        this.router.navigate(['/inicio'])
 
     }, error => {
         if(error.status == 401 ){
