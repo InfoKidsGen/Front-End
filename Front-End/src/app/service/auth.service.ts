@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -16,6 +16,10 @@ export class AuthService {
 
     ) { }
 
+    token ={
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
+
     login(usuarioLogin: UsuarioLogin): Observable <UsuarioLogin>{
       return this.http.post<UsuarioLogin>("https://infokidsgen.herokuapp.com/usuarios/logar", usuarioLogin)
     }
@@ -23,6 +27,10 @@ export class AuthService {
     cadastrar(usuario: Usuario): Observable <Usuario>{
       return this.http.post<Usuario>("https://infokidsgen.herokuapp.com/usuarios/cadastrar", usuario)
 
+    }
+
+    getByIUser(id: number): Observable<Usuario>{
+      return this.http.put<Usuario>(`https://infokidsgen.herokuapp.com/usuarios/${id}`, this.token)
     }
 
     logado(){

@@ -1,8 +1,3 @@
-/*
-    DEMO STYLE
-*/
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -70,8 +65,29 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    background-color: #000;
+    height: 30vh;
+}
+
+#sidebar .sidebar-header .card {
+    height: 30vh;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+#bg-profile {
+    height: 100%;
+    opacity: .6;
+    border-radius: 0 !important;
+}
+
+#user {
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5) !important;
 }
 
 #sidebar ul.components {
