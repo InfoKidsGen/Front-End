@@ -38,7 +38,7 @@ export class InicioComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
-
+    this.authService.refreshToken()
     this.getAllTemas()
     this.getAllPostagens()
   }
@@ -58,6 +58,7 @@ export class InicioComponent implements OnInit {
   findByIdUser(){
     this.authService.getByIUser(this.idUser).subscribe((resp: Usuario) => {
       this.user = resp
+        console.log(resp)
     })
   }
 
@@ -65,7 +66,6 @@ export class InicioComponent implements OnInit {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
 
-      console.log(resp)
     })
   }
 
