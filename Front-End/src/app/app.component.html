@@ -21,16 +21,16 @@
                 <a routerLink="/inicio">Postagens</a>
             </li>
             <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" 
+                class="dropdown-toggle"><i class="fa fa-cogs mr-2"></i>Configurações</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
+
                     <li>
-                        <a href="#">Page 1</a>
+                        <a (click)='usuarioLogado()' [routerLink]="['/usuario-edit',usuario.id]">
+                            <i class="fa fa-pencil mr-2"></i>Editar Perfil</a>
                     </li>
                     <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
+                        <a (click)='sair()'><i class="fa fa-sign-out mr-2"></i>Sair</a>
                     </li>
                 </ul>
             </li>

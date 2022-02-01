@@ -11,7 +11,6 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { KidsComponent } from './kids/kids.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,6 +25,7 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +37,13 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     SobreNosComponent,
     KidsComponent,
     RodapeComponent,
-    MenuComponent,
     ConfiguracoesComponent,
     TemasComponent,
     TemaEditComponent,
     TemaDeleteComponent,
     PostagemEditComponent,
-    PostagemDeleteComponent
+    PostagemDeleteComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

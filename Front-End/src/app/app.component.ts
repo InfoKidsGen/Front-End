@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from './service/auth.service';
 import * as $ from 'jquery'
 import { environment } from 'src/environments/environment.prod';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,9 @@ export class AppComponent {
 
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
+
   ){
 
   }
@@ -45,5 +48,13 @@ export class AppComponent {
     }
   }
 
+  sair(){
 
+    environment.token= ''
+    environment.foto= ''
+    environment.id= 0
+    environment.nomeCompleto= ''
+
+    this.router.navigate(['/login'])
+    }
 }

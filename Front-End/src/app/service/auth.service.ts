@@ -36,7 +36,12 @@ export class AuthService {
 
     }
 
-    getByIUser(id: number): Observable<Usuario>{
+    atualizar(usuario: Usuario): Observable <Usuario>{
+      return this.http.put<Usuario>("https://infokidsgen.herokuapp.com/usuarios/atualizar", usuario, this.token)
+      
+    }
+
+    getByIdUser(id: number): Observable<Usuario>{
       return this.http.get<Usuario>(`https://infokidsgen.herokuapp.com/usuarios/${id}`, this.token)
     }
 
