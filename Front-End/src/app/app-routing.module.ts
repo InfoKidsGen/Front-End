@@ -9,6 +9,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { InicioComponent } from './inicio/inicio.component';
 import { JogosComponent } from './jogos/jogos.component';
 import { LoginComponent } from './login/login.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TemasComponent } from './temas/temas.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'inicio', component: InicioComponent},
   {path:'temas', component: TemasComponent},
   {path:'games', component: JogosComponent},
+  {path:'sobre', component: SobreNosComponent},
 
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},

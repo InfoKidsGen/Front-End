@@ -28,6 +28,8 @@ export class InicioComponent implements OnInit {
 
   key = "data"
   reverse = true
+  tituloPost: string
+  descTema: string
 
   constructor(
     private postagemService: PostagemService,
@@ -93,4 +95,31 @@ export class InicioComponent implements OnInit {
 
   }
 
+  findByTema(){
+    
+    if(this.tituloPost == ''){
+      this.getAllTemas()
+    }
+
+    else{
+      this.temaService.getByNomeTema(this.descTema).subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+      })
+
+    }
+  }
+
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    }
+
+    else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+      })
+    
+    }
+  }
 }

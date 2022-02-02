@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/model/Usuario';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-usuario-edit',
@@ -16,7 +17,7 @@ export class UsuarioEditComponent implements OnInit {
   confirmarSenha: string
   tipoUsuario: string
   idUser: number
-  
+
   constructor(
 
     private authService: AuthService,
@@ -33,8 +34,10 @@ export class UsuarioEditComponent implements OnInit {
     this.router.navigate(['/login'])}
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
+    this.confirmarSenha = ''
+    this.usuario.senha = ''
   }
-
+  
   findByIdUser(id: number){
     this.authService.getByIdUser(id).subscribe((resp: Usuario) => {
     this.usuario = resp
