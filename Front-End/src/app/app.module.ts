@@ -11,6 +11,8 @@ import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from "ngx-bootstrap/modal";
+import { OrderModule, OrderPipe } from "ngx-order-pipe";
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -27,6 +29,8 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { AlertasComponent } from './alertas/alertas.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     TemaDeleteComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
-    UsuarioEditComponent
+    UsuarioEditComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,9 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     MatIconModule,
     MatListModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot(),
+    OrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
