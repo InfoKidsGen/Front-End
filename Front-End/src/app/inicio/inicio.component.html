@@ -32,16 +32,13 @@
 
             <ul class="nav nav-tabs d-flex justify-content-center my-4" id="myTab" role="tablist">
                 <li (click)='getAllPostagens()' class="nav-item" role="presentation">
-                    <a class="nav-link active" id="todas-tab" data-toggle="tab" href="#todas" role="tab"
-                        aria-controls="todas" aria-selected="true">Todas as postagens</a>
+                    <a class="nav-link active" id="todas-tab" data-toggle="tab" href="#todas" role="tab" aria-controls="todas" aria-selected="true">Todas as postagens</a>
                 </li>
                 <li (click)='findByIdUser()' class="nav-item" role="presentation">
-                    <a class="nav-link" id="minhas-tab" data-toggle="tab" href="#minhas" role="tab"
-                        aria-controls="minhas" aria-selected="false">Minhas postagens</a>
+                    <a class="nav-link" id="minhas-tab" data-toggle="tab" href="#minhas" role="tab" aria-controls="minhas" aria-selected="false">Minhas postagens</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="temas-tab" data-toggle="tab" href="#tema" role="tab" aria-controls="tema"
-                        aria-selected="false">Postagem por tema</a>
+                    <a class="nav-link" id="temas-tab" data-toggle="tab" href="#tema" role="tab" aria-controls="tema" aria-selected="false">Postagem por tema</a>
                 </li>
             </ul>
 
@@ -63,6 +60,7 @@
                                             <p class="card-text">{{item.texto}}</p>
                                             <p class="card-text"><small class="text-muted">Data: {{item.data | date:
                                                     'dd/MM/yyyy'}} - {{item.data | date: 'HH:mm'}}</small></p>
+                                            <p class="card-text"><small>By: {{item.usuario.nomeCompleto}}</small></p>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +77,7 @@
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
-                                        <img src="{{item.midia}}" class= "img-fluid">
+                                        <img src="{{item.midia}}" class="img-fluid">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
@@ -89,8 +87,8 @@
                                                     'dd/MM/yyyy'}} - {{item.data | date: 'HH:mm'}}</small></p>
                                             <div class="botoes">
 
-                                                <a [routerLink]="['/postagem-edit', item.id]" class= "text-info mr-3"><i class="fa fa-pencil mr-2"></i>Editar</a>
-                                                <a [routerLink]="['/postagem-delete', item.id]" class= "text-danger"><i class="fa fa-trash mr-2"></i>Deletar</a>
+                                                <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3"><i class="fa fa-pencil mr-2"></i>Editar</a>
+                                                <a [routerLink]="['/postagem-delete', item.id]" class="text-danger"><i class="fa fa-trash mr-2"></i>Deletar</a>
                                             </div>
                                         </div>
                                     </div>
@@ -131,20 +129,17 @@
 
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
-                        placeholder="Titulo da postagem">
+                    <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Titulo da postagem">
                 </div>
 
                 <div class="form-group">
                     <label for="texto">Texto</label>
-                    <textarea [(ngModel)]="postagem.texto" class="form-control" name="text" id="texto " rows="3"
-                        placeholder="Conteúdo da postagem"></textarea>
+                    <textarea [(ngModel)]="postagem.texto" class="form-control" name="text" id="texto " rows="3" placeholder="Conteúdo da postagem"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="foto">Capa da postagem</label>
-                    <input [(ngModel)]="postagem.midia" type="text" class="form-control" id="foto"
-                        placeholder="URL da foto">
+                    <input [(ngModel)]="postagem.midia" type="text" class="form-control" id="foto" placeholder="URL da foto">
                 </div>
 
                 <div class="form-group">
@@ -159,8 +154,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger text-white" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success text-white" data-dismiss="modal"
-                    (click)="publicar()">Publicar</button>
+                <button type="button" class="btn btn-success text-white" data-dismiss="modal" (click)="publicar()">Publicar</button>
             </div>
         </div>
     </div>
