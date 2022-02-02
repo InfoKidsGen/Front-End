@@ -1,4 +1,5 @@
 <div class="wrapper" (mouseover)="usuarioLogado()">
+
     <!-- Sidebar  -->
     <nav *ngIf="authService.logado()" id="sidebar">
         <div class="sidebar-header">
@@ -18,36 +19,40 @@
         <ul class="list-unstyled components">
 
             <li>
-                <a routerLink="/inicio">Postagens</a>
+                <a routerLink="/inicio"><i class="fa fa-comments mr-2"></i>Postagens</a>
+            </li>
+
+            <li>
+                <a routerLink="/temas">
+                    <i class="fa fa-paint-brush mr-2"></i>Temas</a>
             </li>
             <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" 
-                class="dropdown-toggle"><i class="fa fa-cogs mr-2"></i>Configurações</a>
+                <a routerLink="/games">
+                    <i class="fa fa-trophy mr-2"></i>Games</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fa fa-cogs mr-2"></i>Configurações</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
 
                     <li>
                         <a (click)='usuarioLogado()' [routerLink]="['/usuario-edit',usuario.id]">
-                            <i class="fa fa-pencil mr-2"></i>Editar Perfil</a>
+                            <i class="fa fa-pencil-square-o mr-2"></i>Editar Perfil</a>
                     </li>
                     <li>
-                        <a (click)='sair()'><i class="fa fa-sign-out mr-2"></i>Sair</a>
+                        <a href="javascript:void()" (click)='sair()'>
+                            <i class="fa fa-sign-out mr-2"></i>Sair</a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a routerLink="/temas">Temas</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
             </li>
         </ul>
 
         <ul class="list-unstyled CTAs">
             <li>
-                <a href="#" class="download">Download source</a>
+                <a href="#" class="download">Botão 01</a>
             </li>
             <li>
-                <a href="#" class="article">Back to article</a>
+                <a href="#" class="article">Botão 02</a>
             </li>
         </ul>
     </nav>
@@ -74,10 +79,7 @@
                             <a class="nav-link" href="#">Page</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Page</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Page</a>
+                            <a href="javascript:void()" (click)='sair()' class="nav-link"><i class="fa fa-sign-out mr-2"></i>Sair</a>
                         </li>
                     </ul>
                 </div>
