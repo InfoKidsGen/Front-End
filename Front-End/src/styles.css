@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Outfit:wght@100&display=swap');
 
-:root{
-    
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Outfit:wght@100&display=swap');
+:root {
     --rosa: #d55df5;
     --roxo: #a361ff;
     --roxoEscuro: #6a64e8;
@@ -11,11 +10,17 @@
     --cinzaEscuro: #343434;
     --brancoGelo: #ededed;
     --cinzaClaro: #bababa;
-
+    --amarelo: #ffd501;
 }
 
-*:not(i, mat-icon){
+*:not(i,
+mat-icon) {
     font-family: "Montserrat", sans-serif !important;
+}
+
+@font-face {
+    font-family: ColoPro regular;
+    src: url(/assets/fonts/Colo-Pro.otf);
 }
 
 html,
@@ -25,7 +30,6 @@ body {
 
 body {
     margin: 0;
-
 }
 
 .overflow {

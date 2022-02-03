@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
+.titulo h1 {
+    font-family: ColoPro regular, sans-serif !important;
+    font-size: 5rem;
+    color: var(--amarelo);
+    text-transform: uppercase;
+    text-shadow: 4px 4px 4px rgba(255, 213, 1, .5);
+}
+
+#header {
+    background-color: #7632e3;
+    color: #fff;
+    padding-bottom: 50px;
+}
+
 #game {
     background-size: contain;
     background-repeat: no-repeat;
@@ -23,13 +37,20 @@
     background-color: rgba(0, 0, 0, .05);
 }
 
+.jogar button {
+    background-color: var(--roxoEscuro);
+}
+
+
+/* Card */
+
 #container {
     box-shadow: 0 15px 30px 1px grey;
     background: rgba(255, 255, 255, 0.90);
     text-align: center;
     border-radius: 5px;
     overflow: hidden;
-    margin: 5em auto;
+    margin: 2em auto 0 auto;
     height: 350px;
     width: 700px;
 }
@@ -45,7 +66,7 @@
 }
 
 #container .product-details h1 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', cursive !important;
     display: inline-block;
     position: relative;
     font-size: 30px;
