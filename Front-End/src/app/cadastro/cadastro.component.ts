@@ -56,7 +56,7 @@ export class CadastroComponent implements OnInit {
     }
     else{
       //Foto Padrão:
-// Alternativa: if(this.usuario.foto==''||this.usuario.foto==null){
+
       if(this.link==false){
         this.usuario.foto = 'https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-366-456318-512.png'
        }
