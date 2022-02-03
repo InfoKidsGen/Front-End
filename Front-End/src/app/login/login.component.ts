@@ -12,7 +12,7 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
-  
+
   constructor(
 
     private authService: AuthService,

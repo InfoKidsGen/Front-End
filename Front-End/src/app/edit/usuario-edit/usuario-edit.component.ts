@@ -15,7 +15,7 @@ export class UsuarioEditComponent implements OnInit {
   confirmarSenha: string
   tipoUsuario: string
   idUser: number
-  
+
   constructor(
 
     private authService: AuthService,
@@ -31,6 +31,12 @@ export class UsuarioEditComponent implements OnInit {
     this.router.navigate(['/login'])}
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
+
+    this.apagarSenhaGosht()
+  }
+  //não funcionou  <------ VER
+  apagarSenhaGosht(){
+  (<HTMLInputElement> document.getElementById("senhaConfirm")).value=''
   }
 
   findByIdUser(id: number){

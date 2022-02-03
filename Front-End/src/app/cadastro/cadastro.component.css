@@ -18,3 +18,11 @@
 #conteudo {
     height: 80vh;
 }
+
+.validacao-ok {
+    color: green;
+}
+
+.validacao-negada {
+    color: red;
+}

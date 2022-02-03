@@ -18,7 +18,7 @@ export class PostagemEditComponent implements OnInit {
   tema: Tema= new Tema()
   listaTemas: Tema[]
   idTema: number
-  
+
 
   constructor(
     private router: Router,
@@ -42,7 +42,7 @@ export class PostagemEditComponent implements OnInit {
     findAllTemas(){
       this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
         this.listaTemas = resp
-        
+
       })
     }
 
@@ -65,8 +65,6 @@ export class PostagemEditComponent implements OnInit {
 
       this.tema.id = this.idTema
       this.postagem.tema = this.tema
-
-      console.log(this.postagem)
 
       this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
         this.postagem = resp
