@@ -1,24 +1,21 @@
-<div class="container-fluid">
+<div class="container-fluid bg">
 
-    <div class="row d-flex" id="conteudo">
-        <div class="col-md-6">
-            <div id="login-img"></div>
-        </div>
-        <div class="col-md-6">
+    <div class="row d-flex justify-content-center" id="conteudo">
+        <div class="col-md-12">
 
-            <div class="titulo">
-                <h1>Login</h1>
-                <p>Ainda não tem uma conta? <span><a routerLink="/cadastrar">Cadastre-se.</a></span></p>
+            <div class="text-center text-white mb-5">
+                <h1 class="tx-entrar">Entrar</h1>
             </div>
 
-            <form action="">
+            <div class="d-flex justify-content-center text-white">
+            <form class="">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input [(ngModel)]='usuarioLogin.email' type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    <label for="email" class="form-label">Úsuario</label>
+                    <input [(ngModel)]='usuarioLogin.email' type="email" class="form-control box" id="email" name="email" placeholder="name@example.com">
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
-                    <input [(ngModel)]='usuarioLogin.senha' type="password" class="form-control" id="senha" name='senha' placeholder="Digite sua senha...">
+                    <input [(ngModel)]='usuarioLogin.senha' type="password" class="form-control box" id="senha" name='senha' placeholder="Digite sua senha">
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -26,14 +23,29 @@
                     Lembrar-me
                 </label>
                 </div>
-                <button (click)='entrar()' class="btn btn-info">
-                <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Login
-                </button>
+
+
+                <div class="d-flex justify-content-center mt-5">
+                    <button (click)='entrar()' class="btn btncor mb-3" type="submit">
+                        <i class="fa fa-sign-in mr-2 text-white" aria-hidden="true"></i><span class="text-white">Login</span>
+                        </button>
+                </div>
+
             </form>
+            </div>
+            
+            <div>
+            <hr class="mt-3 mb-5 linha w-50">
+            </div>    
+
+
+            <p class="text-center text-white">
+                        Não tem conta? <a routerLink="/cadastrar" class="text-dark">Cadastre-se</a>
+                    </p>
+
+
+
+
         </div>
     </div>
-
-</div>
-<div class="wave">
-
 </div>

@@ -1,22 +1,43 @@
+.bg{
+    background: rgb(161,96,254);
+    background: linear-gradient(90deg, rgba(161,96,254,1) 0%, rgba(41,178,250,1) 85%, rgba(46,179,250,1) 100%);
+}
+
+.txt{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.tx-cadastro{
+    font-size: 50px;
+    font-weight: 400;
+    margin: 20px;
+    color: #ededed;
+}
+
+.box{
+    padding: 25px;
+    width: 35vh;
+    border: 1px solid white;
+}
+
+.box-2{
+    padding: 25px;
+    width: 77vh;
+    border: 1px solid white;
+}
+
+
 #login-img {
     height: 100%;
     width: 100%;
-    background-image: url(/assets/img/svg/login.svg);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-.wave {
-    height: 20vh;
-    width: 100%;
-    background: url(/assets/img/svg/wave.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 #conteudo {
-    height: 80vh;
+    height: 100vh;
 }
 
 .validacao-ok {
@@ -25,4 +46,16 @@
 
 .validacao-negada {
     color: red;
+}
+
+.btncadas{
+color: #ededed;
+background-color: #343434;
+width: 15px;
+}
+
+.btncancel{
+    color: #ededed;
+    background-color: #6192ff;
+    width: 15px;
 }
