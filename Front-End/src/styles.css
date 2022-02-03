@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Outfit:wght@100&display=swap');
+
+:root{
+    
+    --rosa: #d55df5;
+    --roxo: #a361ff;
+    --roxoEscuro: #6a64e8;
+    --azul: #6192ff;
+    --azulLogo: #24b2fa;
+    --cinzaEscuro: #343434;
+    --brancoGelo: #ededed;
+    --cinzaClaro: #bababa;
+
+}
+
+*:not(i, mat-icon){
+    font-family: "Montserrat", sans-serif !important;
+}
 
 html,
 body {
@@ -7,7 +25,7 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+
 }
 
 .overflow {
