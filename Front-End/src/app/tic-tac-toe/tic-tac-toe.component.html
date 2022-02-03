@@ -1,0 +1,84 @@
+<div class="main-container mb-5">
+    <h1>Jogo da velha</h1>
+    <div class="field d-flex justify-content-center">
+        <p class="current-status">Convide alguém para jogar com você...</p>
+    </div>
+
+    <div *ngIf="this.game.gameStatus === 0" class="field d-flex justify-content-center" style="width: 100%;">
+        <button (click)="startGame()" mat-raised-button color="accent" class="start-game-button">
+            <mat-icon>play_arrow</mat-icon> Jogar
+        </button>
+    </div>
+
+    <div *ngIf="this.game.gameStatus === 1" class="field d-flex justify-content-center" style="width: 100%;">
+        <button (click)="stopGame()" mat-raised-button color="warn" class="start-game-button">
+            <mat-icon>clear</mat-icon> Cancelar
+        </button>
+    </div>
+
+    <!-- Início do game -->
+    <div class="gameboard container">
+
+        <div class="gamefield">
+            <div class="row">
+                <div id="one" (click)="clickSubfield($event)" position="0" class="subfield col-4"></div>
+                <div id="two" (click)="clickSubfield($event)" position="1" class="subfield col-4"></div>
+                <div id="three" (click)="clickSubfield($event)" position="2" class="subfield col-4"></div>
+            </div>
+            <div class="row">
+                <div id="four" (click)="clickSubfield($event)" position="3" class="subfield col-4"></div>
+                <div id="five" (click)="clickSubfield($event)" position="4" class="subfield col-4"></div>
+                <div id="six" (click)="clickSubfield($event)" position="5" class="subfield col-4"></div>
+            </div>
+            <div class="row">
+                <div id="seven" (click)="clickSubfield($event)" position="6" class="subfield col-4"></div>
+                <div id="eight" (click)="clickSubfield($event)" position="7" class="subfield col-4"></div>
+                <div id="nine" (click)="clickSubfield($event)" position="8" class="subfield col-4"></div>
+            </div>
+        </div>
+
+        <div class="players">
+
+            <div class="scorecard">
+                <div class="row">
+                    <div class="col-12 playerInfo">
+                        <div>
+                            <img src="/assets/img/games/plus.png" alt="Jogador 2" width="30" height="30" style="transform: rotate(45deg);">
+                        </div>
+                        <span class="ml-2">Jogador 1</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>0 jogos</li>
+                            <li>0 vitórias</li>
+                            <li>0 derrotas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scorecard">
+                <div class="row">
+                    <div class="col-12 playerInfo">
+                        <div>
+                            <img src="/assets/img/games/circle.png" alt="Jogador 1" width="30" height="30">
+                        </div>
+                        <span class="ml-2">Jogador 2</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>0 jogos</li>
+                            <li>0 vitórias</li>
+                            <li>0 derrotas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim do game -->
+
+    </div>
