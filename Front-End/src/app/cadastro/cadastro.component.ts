@@ -54,7 +54,7 @@ export class CadastroComponent implements OnInit {
       }
       console.log(this.formOk)
     if (this.formOk==false){
-      alert("Favor preencher todos os campos!")
+      this.alertas.showAlertInfo("Favor preencher todos os campos!")
     }
     else{
       //Foto Padrão:
