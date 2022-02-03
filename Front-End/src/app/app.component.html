@@ -2,10 +2,11 @@
 
     <!-- Sidebar  -->
     <nav *ngIf="authService.logado()" id="sidebar">
+        <div class="menu sticky-top">
         <div class="sidebar-header">
 
-            <div class="card bg-dark text-white">
-                <img id="bg-profile" src="/assets/img/backgrounds/bg_1.jpg" class="card-img">
+            <div class="card bg-dark">
+                <img id="bg-profile" src="/assets/img/backgrounds/bg_1.png" class="card-img">
                 <div class="card-img-overlay">
                     <div class="profile d-flex flex-column align-items-center justify-content-center">
                         <div id="user"></div>
@@ -23,13 +24,19 @@
             </li>
 
             <li>
-                <a routerLink="/temas">
-                    <i class="fa fa-paint-brush mr-2"></i>Temas</a>
+                <a routerLink="/games">
+                    <i class="fa fa-gamepad mr-2"></i>Games</a>
             </li>
             <li>
-                <a routerLink="/games">
-                    <i class="fa fa-trophy mr-2"></i>Games</a>
+                <a routerLink="/sobre"><i class="fa fa-users mr-2"></i>Sobre nós</a>
             </li>
+
+            <li>
+                <a routerLink="/temas">
+                    <i class="fa fa-paint-brush mr-2"></i>Temas</a> 
+                            
+            </li>
+
             <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="fa fa-cogs mr-2"></i>Configurações</a>
@@ -48,13 +55,31 @@
         </ul>
 
         <ul class="list-unstyled CTAs">
-            <li>
-                <a href="#" class="download">Botão 01</a>
-            </li>
-            <li>
-                <a href="#" class="article">Botão 02</a>
-            </li>
+            <div class="page-footer font-small pt-2">
+
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <h4 class="text-white"></h4>
+                        <a href="#" target="_blank" class="px-3 text-white"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" class="px-3 text-white"><i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" target="_blank" class="px-3 text-white"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center text-white">Todos os direitos reservados &copy;2022</p>
+                    </div>
+                </div>
+            
+            </div>
         </ul>
+
+        </div>
+
     </nav>
 
     <!-- Page Content  -->
@@ -63,8 +88,8 @@
         <nav *ngIf="authService.logado()" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
 
-                <button (click)="toggle()" type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i id="toggle-icon" class="fa fa-arrow-left"></i>
+                <button (click)="toggle()" type="button" id="sidebarCollapse" class="btn">
+                    <i id="toggle-icon" class="fa fa-bars"></i>
                 </button>
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-align-justify"></i>
@@ -72,9 +97,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" routerLink="/sobre"><i class="fa fa-info mr-2"></i>Sobre nós</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a href="javascript:void()" (click)='sair()' class="nav-link"><i class="fa fa-sign-out mr-2"></i>Sair</a>
                         </li>
@@ -85,7 +108,7 @@
 
         <!-- Início do conteúdo do site -->
         <router-outlet></router-outlet>
-        <app-rodape *ngIf="authService.logado()"></app-rodape>
+
         <!-- Fim do conteúdo do site -->
 
     </div>
