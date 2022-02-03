@@ -1,10 +1,8 @@
 body {
-    font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -20,7 +18,7 @@ a:focus {
 }
 
 .navbar {
-    padding: 15px 10px;
+    padding: 10px 10px 0 10px;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -34,7 +32,7 @@ a:focus {
     border: none;
 }
 
-#sidebarCollapse{
+#sidebarCollapse {
     color: var(--cinzaClaro) !important;
     font-size: 1.5rem;
 }
@@ -64,14 +62,12 @@ a:focus {
     color: #fff;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     transition: all 0.3s;
-
 }
 
 .menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
 #sidebar.active {
@@ -137,8 +133,7 @@ a[aria-expanded="true"] {
     background: var(--brancoGelo);
 }
 
-.card-img-overlay{
-
+.card-img-overlay {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,6 +156,7 @@ ul ul a {
     padding-left: 30px !important;
     background: var(--cinzaClaro);
 }
+
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -195,18 +191,18 @@ ul ul a {
     padding: 10px;
 }
 
-.fa{
+.fa {
     font-size: 1.8rem;
 }
 
 .fa-facebook-square:hover {
     color: #3B5998;
 }
-.fa-instagram:hover{
 
-    background: -moz-linear-gradient(top, rgba(131,58,180,1),rgba(253,29,29,0.7595413165266106),rgba(252,176,69,1));
-    background: -webkit-linear-gradient(top, rgba(131,58,180,1),rgba(253,29,29,0.7595413165266106),rgba(252,176,69,1));
-    background: linear-gradient(to bottom, rgba(131,58,180,1),rgba(253,29,29,0.7595413165266106),rgba(252,176,69,1));
+.fa-instagram:hover {
+    background: -moz-linear-gradient(top, rgba(131, 58, 180, 1), rgba(253, 29, 29, 0.7595413165266106), rgba(252, 176, 69, 1));
+    background: -webkit-linear-gradient(top, rgba(131, 58, 180, 1), rgba(253, 29, 29, 0.7595413165266106), rgba(252, 176, 69, 1));
+    background: linear-gradient(to bottom, rgba(131, 58, 180, 1), rgba(253, 29, 29, 0.7595413165266106), rgba(252, 176, 69, 1));
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
