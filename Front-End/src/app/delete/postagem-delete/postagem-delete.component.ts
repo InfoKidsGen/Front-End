@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { post } from 'jquery';
 import { Postagem } from 'src/app/model/Postagem';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -17,10 +17,11 @@ export class PostagemDeleteComponent implements OnInit {
   nome = environment.nomeCompleto
 
   constructor(
-    
+
     private router: Router,
     private route: ActivatedRoute,
-    private postagemService: PostagemService
+    private postagemService: PostagemService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -30,15 +31,15 @@ export class PostagemDeleteComponent implements OnInit {
 
     if(environment.token == ''){
     this.router.navigate(['/login'])
-      
+
     }
-    
+
     this.idPost = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPost)
   }
 
     findByIdPostagem(id:number){
-      
+
     this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
     this.postagem = resp
       })
@@ -48,7 +49,7 @@ export class PostagemDeleteComponent implements OnInit {
     apagar(){
 
       this.postagemService.deletePostagem(this.idPost).subscribe(() => {
-      alert('Postagem excluída com sucesso! ')
+      this.alertas.showAlertSucess('Postagem excluída com sucesso! ')
       this.router.navigate(['/inicio'])
       })
   }

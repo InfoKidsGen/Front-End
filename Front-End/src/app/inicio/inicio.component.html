@@ -32,21 +32,30 @@
 
             <ul class="nav nav-tabs d-flex justify-content-center my-4" id="myTab" role="tablist">
                 <li (click)='getAllPostagens()' class="nav-item" role="presentation">
-                    <a class="nav-link active" id="todas-tab" data-toggle="tab" href="#todas" role="tab" aria-controls="todas" aria-selected="true">Todas as postagens</a>
+                    <a class="nav-link active" id="all-posts" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Todas as postagens</a>
                 </li>
                 <li (click)='findByIdUser()' class="nav-item" role="presentation">
-                    <a class="nav-link" id="minhas-tab" data-toggle="tab" href="#minhas" role="tab" aria-controls="minhas" aria-selected="false">Minhas postagens</a>
+                    <a class="nav-link" id="my-posts" data-toggle="tab" href="#my" role="tab" aria-controls="my" aria-selected="false">Minhas postagens</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="temas-tab" data-toggle="tab" href="#tema" role="tab" aria-controls="tema" aria-selected="false">Postagem por tema</a>
+                    <a class="nav-link" id="themesposts" data-toggle="tab" href="#themes" role="tab" aria-controls="themes" aria-selected="false">Postagem por tema</a>
                 </li>
             </ul>
 
 
             <div class="tab-content" id="myTabContent">
-                <!-- Início todas postagens -->
-                <div class="tab-pane fade show active" id="todas" role="tabpanel" aria-labelledby="todas-tab">
-                    <div *ngFor="let item of listaPostagens" class="row">
+
+                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-posts">
+
+                <div class="row d-flex justify-content-center my-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input [(ngModel)]='tituloPost' class='form-control' type="text" name="titulo" id="titulo" placeholder="Digite para pesquisar..." (keyup)="findByTituloPostagem()">
+                        </div>
+                    </div>
+                </div>
+
+                    <div *ngFor="let item of listaPostagens | orderBy : key : reverse" class="row">
                         <div class="col-md-12">
 
                             <div class="card mb-3" style="max-width: 540px;">
@@ -68,11 +77,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Fim todas postagens -->
+                <!-- Fim todas postagens --> 
 
                 <!-- Início minhas postagens -->
-                <div class="tab-pane fade" id="minhas" role="tabpanel" aria-labelledby="minhas-tab">
-                    <div *ngFor="let item of user.postagem" class="row">
+                <div class="tab-pane fade" id="my" role="tabpanel" aria-labelledby="my-posts">
+
+                    <div *ngFor="let item of user.postagem | orderBy : key : reverse" class="row">
                         <div class="col-md-12">
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row no-gutters">
@@ -99,16 +109,45 @@
                     </div>
                 </div>
 
+            <!-- Início postagens por tema -->
+            <div class="tab-pane fade" id="themes" role="tabpanel" aria-labelledby="themesposts">
 
+                <div class="row d-flex justify-content-center my-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input [(ngModel)]='descTema' class='form-control' type="text" name="descricao" id="descricao" placeholder="Digite um tema para pesquisar..." (keyup)="findByTema()">
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngFor="let tema of listaTemas | orderBy : key : reverse" class="row">
+                    <div *ngFor='let item of tema.postagem'>
+                    <div class="col-md-12">
+
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="{{item.midia}}" class="img-fluid">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{item.titulo}}</h5>
+                                        <p class="card-text">{{item.texto}}</p>
+                                        <p class="card-text"><small class="text-muted">Data: {{item.data | date:
+                                                'dd/MM/yyyy'}} - {{item.data | date: 'HH:mm'}}</small></p>
+                                        <p class="card-text"><small>By: {{item.usuario.nomeCompleto}}</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             </div>
-            <!-- Fim minhas postagens -->
 
-            <!-- Início postagens por tema -->
-            <div class="tab-pane fade" id="tema" role="tabpanel" aria-labelledby="tema-tab">Postagem por tema</div>
         </div>
-        <!-- Fim postagens por tema -->
-
 
     </div>
 </div>

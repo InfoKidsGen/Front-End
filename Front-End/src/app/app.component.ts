@@ -17,7 +17,6 @@ export class AppComponent {
     foto : ''
   }
 
-
   constructor(
     public authService: AuthService,
     private router: Router

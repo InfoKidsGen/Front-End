@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
-// import * as $ from 'jquery'
 
 @Component({
   selector: 'app-cadastro',
@@ -20,7 +20,8 @@ export class CadastroComponent implements OnInit {
   constructor (
 
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -44,6 +45,7 @@ export class CadastroComponent implements OnInit {
   cadastro(){
 
   this.usuario.perfis=this.tipoUsuario
+
     console.log(this.formOk)
     if(this.nome&&this.tipo&&this.email&&this.senhaLonga&&this.senhaIgual){
         this.formOk = true
@@ -64,7 +66,7 @@ export class CadastroComponent implements OnInit {
       this.authService.cadastrar(this.usuario).subscribe((resp:Usuario) => {
         this.usuario=resp
           this.router.navigate(['/login'])
-            alert("Usuario cadastrado com sucesso!")
+            this.alertas.showAlertSucess("Usuario cadastrado com sucesso!")
       })
     }
   }
