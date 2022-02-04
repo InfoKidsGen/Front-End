@@ -15,7 +15,7 @@ import { TemasComponent } from './temas/temas.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'login', pathMatch:'full'},
+  {path:'', redirectTo:'info', pathMatch:'full'},
   {path:'login', component: LoginComponent},
   {path:'cadastrar', component: CadastroComponent},
   {path:'inicio', component: InicioComponent},
