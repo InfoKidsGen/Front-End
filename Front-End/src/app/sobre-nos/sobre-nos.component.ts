@@ -13,9 +13,10 @@ export class SobreNosComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
-    window.scroll(0,0)
-    if(environment.token==''){
+  ngOnInit(){
+    window.scroll(0, 0)
+
+    if(environment.token == ''){
       this.router.navigate(['/login'])
     }
   }
