@@ -1,34 +1,15 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+<div class="container flex-column">
 
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="{{postagem.midia}}" class="img-fluid">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{postagem.titulo}}</h5>
-                                    <p class="card-text">{{postagem.texto}}</p>
-                                    <p class="card-text"><small class="text-muted">Data: {{postagem.data | date:
-                                            'dd/MM/yyyy'}} - {{postagem.data | date: 'HH:mm'}}</small></p>
-                                            <div class="botoes">
-
-                                                <button (click)='apagar()' class= "btn btn-danger mr-3"><i class="fa fa-trash mr-2"></i>Apagar</button>
-                                                <button routerLink="/inicio" class= "btn btn-info"><i class="fa fa-times mr-2"></i>Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div class="text-center mb-4">
+        <h1 class="text-center my-3">Apagar postagem</h1>
+        <p class="mb-2"><span class="font-weight-bold">ATENÇÃO:</span> Você está prestes a excluir a postagem:</p>
+        <h2 class="text-center">{{postagem.titulo}}</h2>
     </div>
-</div>
 
+    <div class="row align-items-center d-flex justify-content-center mt-2">
+        <button class="btn btn-info mr-3" routerLink="/inicio"><i class="fa fa-times mr-2"></i> Voltar</button>
+        <button class="btn btn-danger" (click)="apagar()"><i class="fa fa-trash mr-2"></i> Apagar</button>
+    </div>
+
+
+</div>

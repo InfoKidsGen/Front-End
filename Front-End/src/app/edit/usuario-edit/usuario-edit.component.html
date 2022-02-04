@@ -1,21 +1,22 @@
-<div class="container">
-    <div class="row">
+<div class="container-fluid d-flex justify-content-center m-0">
+    <div class="row mt-3">
         <div class="col-md-12">
 
-            <div class="col-md-8">
-
-                <h1 class="d-flex justify-content-center">
+            <div class="col-md-8 mb-3">
+                <h1>
                     Atualizar Perfil
                 </h1>
 
             </div>
 
             <form action="">
+
                 <div class="row">
                     <div class="mb-3 col-md-6">
                         <label for="usuario" class="form-label">Nome Completo</label>
                         <input [(ngModel)]='usuario.nomeCompleto' type="text" class="form-control" id="usuario" name="nomeCompleto" placeholder="Digite o seu nome...">
                     </div>
+
                     <div class="mb-3 col-md-6">
                         <label for="tipo">Tipo de usuário</label>
                         <select (change)='tipoUser($event)' class="form-control" name="tipo" id="tipo">
@@ -32,6 +33,7 @@
                     <label for="email" class="form-label">Email</label>
                     <input [(ngModel)]='usuario.email' readonly disabled type="email" class="form-control" id="email" name='email' placeholder="name@example.com">
                 </div>
+
                 <div class="row">
                     <div class="mb-3 col-md-6">
                         <label for="senha" class="form-label">Senha</label>
@@ -42,19 +44,21 @@
                         <input [(ngModel)]='usuario.senha' type="password" class="form-control" id="senhaConfirm" name='senhaConfirm' placeholder="Confirme sua senha...">
                     </div>
                 </div>
+
                 <div class="mb-4">
                     <label for="linkDaImagem" class="form-label">Foto de Perfil</label>
                     <input [(ngModel)]='usuario.foto' type="text" class="form-control" id="linkDaImagem" name='linkImagem' placeholder="Insira o link da sua imagem de perfil">
                 </div>
 
                 <div class="row d-flex justify-content-between px-3">
-                    <button (click)='atualizar()' class="btn btn-info col-md-2 mr-5">
-                    <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Atualizar
+                    <button (click)='atualizar()' class="btn btn-info col-md-5">
+                    <i class="fa fa-refresh mr-2" aria-hidden="true"></i>Atualizar
                 </button>
-                    <button class="btn btn-danger col-md-2 mr-5" routerLink="/login">
-                    <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Cancelar
+                    <button class="btn btn-danger col-md-5" routerLink="/login">
+                    <i class="fa fa-times mr-2" aria-hidden="true"></i>Cancelar
                 </button>
                 </div>
+
             </form>
 
         </div>

@@ -1,3 +1,44 @@
-.botoes button {
-    width: 45% !important;
+.welcome {
+    height: 40vh;
+}
+
+.btn.nova {
+    background-color: var(--azul);
+    border: none;
+    color: #fff;
+}
+
+.btn.ver {
+    background-color: var(--roxoEscuro);
+    border: none;
+    color: #fff;
+}
+
+
+/* Cards */
+
+.post {
+    width: 65vw !important;
+    background-color: rgba(0, 0, 0, .03);
+    border-radius: 15px;
+    padding-left: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+}
+
+.postagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.articles {
+    height: 38vh;
+}
+
+.articles img {
+    width: 200px;
+    height: 32vh;
+    margin: 10px;
+    border-radius: 15px;
 }

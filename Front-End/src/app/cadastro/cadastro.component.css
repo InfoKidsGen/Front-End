@@ -1,32 +1,31 @@
-.bg{
-    background: rgb(161,96,254);
-    background: linear-gradient(90deg, rgba(161,96,254,1) 0%, rgba(41,178,250,1) 85%, rgba(46,179,250,1) 100%);
+.bg {
+    background: rgb(161, 96, 254);
+    background: linear-gradient(90deg, rgba(161, 96, 254, 1) 0%, rgba(41, 178, 250, 1) 85%, rgba(46, 179, 250, 1) 100%);
 }
 
-.txt{
+.txt {
     font-size: 25px;
     margin-bottom: 30px;
 }
 
-.tx-cadastro{
+.tx-cadastro {
     font-size: 50px;
     font-weight: 400;
     margin: 20px;
     color: #ededed;
 }
 
-.box{
+.box {
     padding: 25px;
     width: 35vh;
     border: 1px solid white;
 }
 
-.box-2{
+.box-2 {
     padding: 25px;
     width: 77vh;
     border: 1px solid white;
 }
-
 
 #login-img {
     height: 100%;
@@ -34,7 +33,6 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-
 
 #conteudo {
     height: 100vh;
@@ -46,15 +44,17 @@
 
 .validacao-negada {
     color: red;
+    position: absolute;
+    margin-top: 2px;
 }
 
-.btncadas{
-color: #ededed;
-background-color: #343434;
-width: 15px;
+.btncadas {
+    color: #ededed;
+    background-color: #343434;
+    width: 15px;
 }
 
-.btncancel{
+.btncancel {
     color: #ededed;
     background-color: #6192ff;
     width: 15px;

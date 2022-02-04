@@ -71,8 +71,6 @@ export class InicioComponent implements OnInit {
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
-      console.log(resp)
-
     })
   }
 

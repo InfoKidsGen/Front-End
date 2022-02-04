@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
     <div id="bg-tema" class="row">
-        <div class="col-md-12 text-white pt-4">
+        <div class="col-md-12 mt-3">
 
             <h1 class="txtWelcome text-center">Temas </h1>
             <h3 class="txtWelcome2 text-center">Veja aqui todos os temas cadastrados ou cadastre um novo: </h3>
@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center">
-                        <button (click)="cadastrar()" class="btn btn-light">Cadastrar</button>
+                        <button (click)="cadastrar()" class="btn btn-info"><i class="fa fa-plus mr-2"></i>Cadastrar</button>
                     </div>
 
                 </div>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="row my-4 d-flex justify-content-center">
-        <div class="col-md-6 ">
+        <div class="col-md-9">
 
             <table class="table table-hover">
                 <thead>
@@ -61,7 +61,7 @@
                         <td>{{tema.idioma}}</td>
                         <td class="d-flex justify-content-end">
                             <button class="btn btn-info mr-2" [routerLink]="['/tema-edit', tema.id]"><i class="fa fa-pencil-square-o mr-2"></i>Editar</button>
-                            <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]"><i class="fas fa-trash-alt mr-2"></i>Excluir</button>
+                            <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]"><i class="fa fa-trash mr-2"></i>Excluir</button>
                         </td>
                     </tr>
                 </tbody>

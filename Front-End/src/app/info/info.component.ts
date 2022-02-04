@@ -22,9 +22,5 @@ export class InfoComponent implements OnInit {
   }
 }
 
-login(){
-  this.router.navigate(["/login"])
-}
-
 
 }

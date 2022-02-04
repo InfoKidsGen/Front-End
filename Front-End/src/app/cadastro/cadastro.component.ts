@@ -118,7 +118,7 @@ link: boolean = false
       this.tipo = true
     } else {
       this.tipoElementWrap = (<HTMLElement> document.getElementById("validaTipo"))
-      this.tipoElementWrap.innerHTML = '<p class="validacao-negada" id="validacaoTipo">Preencha o tipo de usuário</p>'
+      this.tipoElementWrap.innerHTML = '<p id="validacaoTipo">Preencha o tipo de usuário</p>'
 
       this.tipoElement = (<HTMLElement> document.getElementById("validacaoTipo"))
       this.tipoElement.style.display = 'inline-block'
@@ -136,7 +136,7 @@ link: boolean = false
       this.nome=true
     } else {
       this.nomeElementWrap = (<HTMLElement> document.getElementById("validaNome"))
-      this.nomeElementWrap.innerHTML = '<p class="validacao-negada" id="validacaoNome">Nome Inválido</p>'
+      this.nomeElementWrap.innerHTML = '<p id="validacaoNome">Nome Inválido</p>'
 
 
       this.nomeElement = (<HTMLElement> document.getElementById("validacaoNome"))
@@ -160,7 +160,7 @@ link: boolean = false
       this.email=true
   } else {
         this.emailElementWrap = (<HTMLElement> document.getElementById("validaEmail"))
-        this.emailElementWrap.innerHTML = '<p class="validacao-negada" id="validacaoEmail">Link Inválido</p>'
+        this.emailElementWrap.innerHTML = '<p id="validacaoEmail">Link Inválido</p>'
 
         this.emailElement = (<HTMLElement> document.getElementById("validacaoEmail"))
 
@@ -178,7 +178,7 @@ link: boolean = false
             this.senhaLonga=true
           } else {
             this.senha1ElementWrap = (<HTMLElement> document.getElementById("validaSenha1"))
-            this.senha1ElementWrap.innerHTML = '<p class="validacao-negada" id="validacaoSenha1">Senha muito curta</p>'
+            this.senha1ElementWrap.innerHTML = '<p id="validacaoSenha1">Senha muito curta</p>'
 
 
             this.senha1Element = (<HTMLElement> document.getElementById("validacaoSenha1"))
@@ -198,7 +198,7 @@ link: boolean = false
             this.senhaIgual=true
           } else {
             this.senha2ElementWrap = (<HTMLElement> document.getElementById("validaSenha2"))
-            this.senha2ElementWrap.innerHTML = '<p class="validacao-negada" id="validacaoSenha2">As senhas não coincidem!</p>'
+            this.senha2ElementWrap.innerHTML = '<p id="validacaoSenha2">As senhas não coincidem!</p>'
 
 
             this.senha2Element = (<HTMLElement> document.getElementById("validacaoSenha2"))
@@ -220,7 +220,7 @@ link: boolean = false
           this.link=true
       } else {
             this.linkDaImagemElementWrap = (<HTMLElement> document.getElementById("validaLinkDaImagem"))
-            this.linkDaImagemElementWrap.innerHTML = '<p class="validacao-negada" id="validacaoLinkDaImagem">Email Inválido</p>'
+            this.linkDaImagemElementWrap.innerHTML = '<p id="validacaoLinkDaImagem">Link inválido! Inválido</p>'
 
             this.linkDaImagemElement = (<HTMLElement> document.getElementById("validacaoLinkDaImagem"))
 

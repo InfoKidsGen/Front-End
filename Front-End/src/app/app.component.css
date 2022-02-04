@@ -22,7 +22,6 @@ a:focus {
     background: #fff;
     border: none;
     border-radius: 0;
-    margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -111,6 +110,10 @@ a:focus {
     border-bottom: 1px solid #bababa;
 }
 
+#sidebar .components li a {
+    padding: 0 10px 0 0;
+}
+
 #sidebar ul p {
     color: #fff;
     padding: 10px;
@@ -185,13 +188,12 @@ ul ul a {
     }
 }
 
-#sidebar .fa {
+.fa {
     font-size: 1.5rem;
-    color: white;
     padding: 10px;
 }
 
-.fa {
+.CTAs i {
     font-size: 1.8rem;
 }
 

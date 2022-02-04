@@ -1,32 +1,31 @@
-.bg{
-    background: rgb(161,96,254);
-    background: linear-gradient(90deg, rgba(161,96,254,1) 0%, rgba(41,178,250,1) 85%, rgba(46,179,250,1) 100%);
+.bg {
+    background: rgb(161, 96, 254);
+    background: linear-gradient(90deg, rgba(161, 96, 254, 1) 0%, rgba(41, 178, 250, 1) 85%, rgba(46, 179, 250, 1) 100%);
 }
 
-.tx-entrar{
+.tx-entrar {
     font-size: 55px;
     font-weight: 500;
 }
 
-
 #conteudo {
     height: 100vh;
-    padding: 200px;
+    padding: 20vh;
 }
 
-.linha{
+.linha {
     background-color: #ededed;
     size: 15px;
 }
 
-.box{
+.box {
     padding: 25px;
     width: 35vh;
     border: 1px solid white;
 }
 
-.btncor{
+.btncor {
     color: #24b2fa;
-    border: 1px solid; 
-    background: #24b2fa; 
+    border: 1px solid;
+    background: #24b2fa;
 }
