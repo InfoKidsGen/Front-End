@@ -1,0 +1,18 @@
+.body {
+    background: rgb(203, 203, 203);
+    background: linear-gradient(90deg, rgba(203, 203, 203, 1) 0%, rgba(141, 141, 141, 1) 100%);
+}
+
+.txt1 {
+    font-family: Montserrat;
+    padding: 2rem;
+}
+
+.card {
+    background: #6192ff;
+    font-style: italic;
+}
+
+p {
+    font-size: 1.1rem;
+}
