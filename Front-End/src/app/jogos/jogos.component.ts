@@ -14,7 +14,7 @@ export class JogosComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    window.scroll(0, 0)
+    window.scroll(0, 75)
 
     if(environment.token == ''){
       this.router.navigate(['/login'])
