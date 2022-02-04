@@ -31,6 +31,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { InfoComponent } from './info/info.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
     PostagemDeleteComponent,
     UsuarioEditComponent,
     AlertasComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
