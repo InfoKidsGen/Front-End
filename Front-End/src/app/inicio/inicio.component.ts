@@ -43,7 +43,7 @@ export class InicioComponent implements OnInit {
     window.scroll(0, 0)
 
     if(environment.token == ''){
-      this.router.navigate(['/login'])
+      this.router.navigate(['/info'])
     }
     this.authService.refreshToken()
     this.getAllTemas()
