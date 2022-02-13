@@ -4,14 +4,13 @@
 }
 
 .txt {
-    font-size: 25px;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
 .tx-cadastro {
     font-size: 50px;
     font-weight: 400;
-    margin: 20px;
     color: #ededed;
 }
 
@@ -21,17 +20,14 @@
     border: 1px solid white;
 }
 
+#tipo {
+    min-height: 50px;
+}
+
 .box-2 {
     padding: 25px;
     width: 77vh;
     border: 1px solid white;
-}
-
-#login-img {
-    height: 100%;
-    width: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 #conteudo {
@@ -52,10 +48,12 @@
     color: #ededed;
     background-color: #343434;
     width: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
 }
 
 .btncancel {
     color: #ededed;
     background-color: #6192ff;
     width: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
 }

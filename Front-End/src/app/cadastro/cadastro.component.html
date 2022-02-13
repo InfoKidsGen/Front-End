@@ -1,10 +1,12 @@
-<div class="container-fluid bg pb-5">
+<div class="container-fluid bg">
 
     <div class="row d-flex justify-content-center" id="conteudo">
+
         <div class="col-md-8 mt-5">
+
             <div class="row">
-                <div class="col-md-12">
-                    <div class="titulo mb-5 d-flex">
+                <div class="col-md-12 d-flex justify-content-between align-items-center">
+                    <div class="titulo mb-3">
                         <h1 class="tx-cadastro">Cadastro</h1>
                     </div>
                     <div class="d-flex justify-content-end">
@@ -43,9 +45,9 @@
 
                     <div class="mb-3 col-md-5">
                         <label for="tipo" class="text-white">Tipo de usuário</label>
-                        <select (change)='tipoUser($event)' (focusout)='validaTipo($event)' class="form-control box w-100" name="tipo" id="tipo">
-                            <option>Escolha o tipo de perfil</option>
-                            <option value="1">Pai</option>
+                        <select (change)='tipoUser($event)' (focusout)='validaTipo($event)' class="form-control w-100" name=" tipo" id="tipo">
+                            <option selected >Escolha o tipo de perfil</option>
+                            <option value="1">Responsável</option>
                             <option value="2">Profissional</option>
                             <option value="3">Criança</option>
                         </select>
@@ -110,15 +112,12 @@
                           <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Cadastrar
                         </button>
                         <button class="btn btncancel col-md-3" routerLink="/login">
-                        <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Cancelar
+                        <i class="fa fa-times mr-2" aria-hidden="true"></i>Cancelar
                         </button>
                     </div>
 
                 </div>
             </form>
-        </div>
-        <div class="col-md-6">
-            <div id="login-img"></div>
         </div>
     </div>
 

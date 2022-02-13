@@ -34,6 +34,9 @@ a:focus {
 #sidebarCollapse {
     color: var(--cinzaClaro) !important;
     font-size: 1.5rem;
+    background: transparent;
+    border: none !important;
+    outline: none !important;
 }
 
 .line {
