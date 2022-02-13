@@ -38,13 +38,17 @@ export class TemasComponent implements OnInit {
   }
 
   cadastrar(){
-    this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
+    this.temaService.postTema(this.tema).subscribe({ next: (resp: Tema) => {
       this.tema = resp;
 
       this.alertas.showAlertSucess("Tema cadastrado com sucesso!")
       this.findAllTemas()
       this.tema = new Tema()
-    })
+    }, error: error => {
+        if(error) {
+          this.alertas.showAlertDanger('Um ou mais campos estão incompletos! Favor preencher todos os campos e enviar novamente')
+        }
+    }})
   }
 
 }

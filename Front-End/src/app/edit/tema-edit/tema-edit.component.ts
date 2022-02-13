@@ -39,12 +39,16 @@ export class TemaEditComponent implements OnInit {
   }
 
   atualizar(){
-    this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
+    this.temaService.putTema(this.tema).subscribe({ next: (resp: Tema) => {
       this.tema = resp
 
       this.alertas.showAlertSucess('Tema atualizado com sucesso!')
       this.router.navigate(['/temas'])
-    })
+    }, error: error => {
+      if(error) {
+        this.alertas.showAlertDanger('Um ou mais campos estão incompletos! Favor preencher todos os campos e enviar novamente')
+      }
+  }})
   }
 
 }

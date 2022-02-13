@@ -11,17 +11,41 @@
 
             <div class="form-group">
                 <label for="desc">Assunto</label>
-                <input [(ngModel)]="tema.assunto" type="text" class="form-control" name="assunto" id="assunto">
+                <input [(ngModel)]="tema.assunto" type="text" class="form-control" name="assunto" id="assunto" #assunto="ngModel" required minlength="5">
+                <div *ngIf="assunto.invalid && (assunto.dirty || assunto.touched)" class="alert alert-danger">
+                    <div *ngIf="assunto.errors?.['required']">
+                        Assunto Inválido!
+                    </div>
+                    <div *ngIf="assunto.errors?.['minlength']">
+                        Assunto Inválido!
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="desc">Publico Alvo</label>
-                <input [(ngModel)]="tema.publicoAlvo" type="text" class="form-control" name="publicoAlvo" id="publicoAlvo">
+                <input [(ngModel)]="tema.publicoAlvo" type="text" class="form-control" name="publicoAlvo" id="publicoAlvo" #publicoAlvo="ngModel" required minlength="2">
+                <div *ngIf="publicoAlvo.invalid && (publicoAlvo.dirty || publicoAlvo.touched)" class="alert alert-danger">
+                    <div *ngIf="publicoAlvo.errors?.['required']">
+                        Público Inválido!
+                    </div>
+                    <div *ngIf="publicoAlvo.errors?.['minlength']">
+                        Público Inválido!
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="desc">Idioma</label>
-                <input [(ngModel)]="tema.idioma" type="text" class="form-control" name="idioma" id="idioma">
+                <input [(ngModel)]="tema.idioma" type="text" class="form-control" name="idioma" id="idioma" #idioma="ngModel" required minlength="2">
+                <div *ngIf="idioma.invalid && (idioma.dirty || idioma.touched)" class="alert alert-danger">
+                    <div *ngIf="idioma.errors?.['required']">
+                        Idioma Inválido!
+                    </div>
+                    <div *ngIf="idioma.errors?.['minlength']">
+                        Idioma Inválido!
+                    </div>
+                </div>
             </div>
 
             <div class="d-flex justify-content-center">
