@@ -74,6 +74,7 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  // Método principal
   publicar(){
     // relacionamento entre tabelas Tema e Postagem
     this.tema.id = this.idTema
@@ -83,18 +84,22 @@ export class InicioComponent implements OnInit {
     this.user.id = this.idUser
     this.postagem.usuario = this.user
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+    this.postagemService.postPostagem(this.postagem).subscribe({next: (resp: Postagem) => {
       this.postagem = resp
 
       this.alertas.showAlertSucess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
-    })
+    }, error: error => {
+      if(error || this.link==false){
+        this.alertas.showAlertDanger('Ops! Você deixou algum campo incompleto. Preencha todos os campos corretamente, e tente enviar novamente.')
+      }
+  },})
 
   }
 
   findByTema(){
-    
+
     if(this.tituloPost == ''){
       this.getAllTemas()
     }
@@ -117,7 +122,33 @@ export class InicioComponent implements OnInit {
       this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
       })
-    
+
     }
+  }
+
+  conteudoLinkDaImagem: string
+  linkDaImagemElementWrap: HTMLElement
+  linkDaImagemElement: HTMLElement
+  link: boolean
+
+  validaLinkDaFoto(event: any) {
+          this.conteudoLinkDaImagem = event.target.value
+
+          const regex = /^(ftp|http|https):\/\/[^ "]+$/
+          if (regex.test(this.conteudoLinkDaImagem)) {
+            if (this.linkDaImagemElement)
+                this.linkDaImagemElement.style.display = 'none'
+
+                this.link = false
+        } else {
+              this.linkDaImagemElementWrap = (<HTMLElement> document.getElementById("validaLinkDaImagem"))
+              this.linkDaImagemElementWrap.classList.add("alert", "alert-danger", "w-100")
+              this.linkDaImagemElementWrap.innerHTML = '<p id="validacaoLinkDaImagem">Link inválido!</p>'
+
+              this.linkDaImagemElement = (<HTMLElement> document.getElementById("validacaoLinkDaImagem"))
+
+              this.link = true
+        }
+
   }
 }

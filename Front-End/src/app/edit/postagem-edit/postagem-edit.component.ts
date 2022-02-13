@@ -62,15 +62,47 @@ export class PostagemEditComponent implements OnInit {
           this.tema = resp
         })
     }
+
+    // Método Principal
     atualizar(){
 
       this.tema.id = this.idTema
       this.postagem.tema = this.tema
 
-      this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
+      this.postagemService.putPostagem(this.postagem).subscribe({ next: (resp: Postagem) => {
         this.postagem = resp
         this.alertas.showAlertSucess("Postagem atualizada com sucesso!")
         this.router.navigate(['/inicio'])
-      })
+      }, error:error =>{
+        if(error || this.link==false) {this.alertas.showAlertDanger('Ops! Você deixou algum campo incompleto. Preencha todos os campos corretamente, e tente enviar novamente.')}
+      }})
     }
+
+// Validação regex de link de foto
+
+  conteudoLinkDaImagem: string
+  linkDaImagemElementWrap: HTMLElement
+  linkDaImagemElement: HTMLElement
+  link: boolean
+
+
+  validaLinkDaFoto(event: any) {
+          this.conteudoLinkDaImagem = event.target.value
+
+          const regex = /^(ftp|http|https):\/\/[^ "]+$/
+          if (regex.test(this.conteudoLinkDaImagem)) {
+            if (this.linkDaImagemElement)
+                this.linkDaImagemElement.style.display = 'none'
+
+            this.link = false
+        } else {
+              this.linkDaImagemElementWrap = (<HTMLElement> document.getElementById("validaLinkDaImagem"))
+              this.linkDaImagemElementWrap.classList.add("alert", "alert-danger", "w-100")
+              this.linkDaImagemElementWrap.innerHTML = '<p id="validacaoLinkDaImagem">Link inválido!</p>'
+
+              this.linkDaImagemElement = (<HTMLElement> document.getElementById("validacaoLinkDaImagem"))
+              this.link = true
+        }
+
+  }
 }

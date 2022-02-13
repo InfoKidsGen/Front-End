@@ -46,13 +46,13 @@ export class CadastroComponent implements OnInit {
 
   this.usuario.perfis=this.tipoUsuario
 
-    console.log(this.formOk)
+
     if(this.nome&&this.tipo&&this.email&&this.senhaLonga&&this.senhaIgual){
         this.formOk = true
       } else {
         this.formOk = false
       }
-      console.log(this.formOk)
+
     if (this.formOk==false){
       this.alertas.showAlertInfo("Favor preencher todos os campos!")
     }
@@ -63,11 +63,15 @@ export class CadastroComponent implements OnInit {
         this.usuario.foto = 'https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-366-456318-512.png'
        }
 
-      this.authService.cadastrar(this.usuario).subscribe((resp:Usuario) => {
+      this.authService.cadastrar(this.usuario).subscribe({ next: (resp:Usuario) => {
         this.usuario=resp
           this.router.navigate(['/info'])
             this.alertas.showAlertSucess("Usuario cadastrado com sucesso!")
-      })
+      }, error:error => {
+        if(error.status==400) {
+          this.alertas.showAlertDanger("O email solicitado já existe em nosso sistema! Favor escolher outro email")
+        }
+      }})
     }
   }
 
@@ -149,7 +153,7 @@ link: boolean = false
 
   validaEmail(event: any) {
     this.conteudoEmail = event.target.value
-    console.log(this.conteudoEmail)
+
 
     const regex = /\S+@\S+\.\S+/
     if (regex.test(this.conteudoEmail)) {
@@ -190,7 +194,7 @@ link: boolean = false
 
       validaSenha2(event:any){
         this.conteudoSenha2 = event.target.value
-        console.log(this.conteudoSenha2)
+
         if(this.conteudoSenha2==this.confirmarSenha){
           if(this.senha2Element)
             this.senha2Element.style.display ='none'

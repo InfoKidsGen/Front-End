@@ -34,20 +34,13 @@ export class UsuarioEditComponent implements OnInit {
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
 
-    this.apagarSenhaGosht()
-  }
-  //não funcionou  <------ VER
-  apagarSenhaGosht(){
-  (<HTMLInputElement> document.getElementById("senhaConfirm")).value=''
-
-    this.confirmarSenha = ''
     this.usuario.senha = ''
   }
 
   findByIdUser(id: number){
     this.authService.getByIdUser(id).subscribe((resp: Usuario) => {
     this.usuario = resp
-    
+
     resp.senha = ''
     })
 

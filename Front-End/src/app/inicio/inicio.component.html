@@ -191,25 +191,57 @@
 
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Titulo da postagem">
+                    <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" name="titulo" #titulo="ngModel" placeholder="Titulo da postagem" required minlength="5">
+
+                    <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="alert alert-danger">
+                        <div *ngIf="titulo.errors?.['required']">
+                            Favor inserir um título!
+                        </div>
+                        <div *ngIf="titulo.errors?.['minlength']">
+                            O título deve ter pelo menos 5 caracteres.
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="texto">Texto</label>
-                    <textarea [(ngModel)]="postagem.texto" class="form-control" name="text" id="texto " rows="3" placeholder="Conteúdo da postagem"></textarea>
+                    <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto " rows="3" placeholder="Conteúdo da postagem" #texto="ngModel" required minlength="10"></textarea>
+
+                    <div *ngIf="texto.invalid && (texto.dirty || texto.touched)" class="alert alert-danger">
+                        <div *ngIf="texto.errors?.['required']">
+                            Favor inserir seu texto!
+                        </div>
+                        <div *ngIf="texto.errors?.['minlength']">
+                            O texto deve ter pelo menos 10 caracteres.
+                        </div>
+                    </div>
+
+
                 </div>
 
                 <div class="form-group">
                     <label for="foto">Capa da postagem</label>
-                    <input [(ngModel)]="postagem.midia" type="text" class="form-control" id="foto" placeholder="URL da foto">
+                    <input [(ngModel)]="postagem.midia" type="text" class="form-control" id="foto" name="foto" placeholder="URL da foto" (focusout)="validaLinkDaFoto($event)">
+                    <div class="d-flex">
+                        <div id="validaLinkDaImagem" class="validacao-negada"></div>
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label (change)="findByIdTema()" for="texto">Escolha um tema ou <a data-dismiss="modal"
                             routerLink="/temas"> cadastre um novo</a></label>
-                    <select class="form-control" id="tema" name="tema" [(ngModel)]="idTema">
+                    <select class="form-control" id="tema" name="tema" [(ngModel)]="idTema" required #tema="ngModel">
                         <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.assunto}}</option>
                     </select>
+
+                    <div *ngIf="tema.errors && tema.touched" class="alert alert-danger">
+                        <div *ngIf="tema.errors['required']">
+                            Favor escolher um tema.
+                        </div>
+                    </div>
+
                 </div>
 
 
