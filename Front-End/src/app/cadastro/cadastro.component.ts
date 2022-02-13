@@ -160,7 +160,7 @@ link: boolean = false
       this.email=true
   } else {
         this.emailElementWrap = (<HTMLElement> document.getElementById("validaEmail"))
-        this.emailElementWrap.innerHTML = '<p id="validacaoEmail">Link Inválido</p>'
+        this.emailElementWrap.innerHTML = '<p id="validacaoEmail">Email Inválido</p>'
 
         this.emailElement = (<HTMLElement> document.getElementById("validacaoEmail"))
 
@@ -220,7 +220,7 @@ link: boolean = false
           this.link=true
       } else {
             this.linkDaImagemElementWrap = (<HTMLElement> document.getElementById("validaLinkDaImagem"))
-            this.linkDaImagemElementWrap.innerHTML = '<p id="validacaoLinkDaImagem">Link inválido! Inválido</p>'
+            this.linkDaImagemElementWrap.innerHTML = '<p id="validacaoLinkDaImagem">Link inválido!</p>'
 
             this.linkDaImagemElement = (<HTMLElement> document.getElementById("validacaoLinkDaImagem"))
 
