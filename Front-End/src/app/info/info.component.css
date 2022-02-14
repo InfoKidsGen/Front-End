@@ -16,3 +16,160 @@
 p {
     font-size: 1.1rem;
 }
+
+
+/* Personalização de itens - carrossel principal */
+
+#carousel-item-1 {
+    background-image: url("./../../assets/img/info/bg-teste-item-1.png");
+    background-size: cover;
+    background-repeat: none;
+    width: 100vw;
+    height: 70vh;
+}
+
+#carousel-item-2 {
+    background-image: url("./../../assets/img/info/bg-teste-item-2.png");
+    background-size: cover;
+    background-repeat: none;
+    width: 100vw;
+    height: 70vh;
+}
+
+#carousel-item-3 {
+    background-image: url("./../../assets/img/info/bg-teste-item-2.png");
+    background-size: cover;
+    background-repeat: none;
+    width: 100vw;
+    height: 70vh;
+}
+
+#main-carousel-image {
+    width: 48vw;
+}
+
+#titulo-bem-vinde {
+    font-family: Montserrat;
+    font-size: 4em;
+}
+
+#texto-bem-vinde {
+    font-family: Montserrat;
+    font-size: 3em;
+    line-height: 1.2em;
+}
+
+.main-icons {
+    max-width: 17vh;
+}
+
+.texto-siga-nos-na-rede {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5em;
+}
+
+.carousel-item a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#titulo-siga-nos-na-rede {
+    color: white;
+    font-size: 2.8em;
+}
+
+
+/*    Responsivo    */
+
+@media screen and (max-width: 768px) {
+    #main-carousel-image {
+        width: 60vw;
+    }
+    #bem-vinde-container {
+        font-size: 0.8em;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    .main-icons {
+        max-width: 11vw;
+    }
+    /*seção 2*/
+    .card-texto-a-direita {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-image-container {
+        display: flex!important;
+        justify-content: center!important;
+        align-content: center;
+    }
+    .txt1 {
+        text-align: center;
+    }
+    #texto-card-ODS {
+        padding-top: 5px;
+        margin-top: 13px!important;
+    }
+    #carousel-2-container {
+        display: block!important;
+        padding-bottom: 30px;
+    }
+    .carrossel-2-card {
+        width: 40vw;
+        min-width: 250px;
+    }
+    #infoKids {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 681px) {
+    #titulo-siga-nos-na-rede {
+        line-height: 1.5em;
+    }
+}
+
+@media screen and (max-width: 564px) {
+    #main-carousel-image {
+        width: 80vw;
+    }
+    #bem-vinde-container {
+        font-size: 0.8em;
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+    .texto-siga-nos-na-rede {
+        font-size: 3vw;
+        padding-top: 3px;
+        padding-bottom: 6px;
+    }
+    .social-link {
+        flex-direction: column!important;
+    }
+    .main-icons {
+        max-width: 15vw;
+    }
+    #carousel-item-2 {
+        align-items: center!important;
+    }
+    #carousel-item-3 {
+        align-items: center!important;
+    }
+    #titulo-bem-vinde {
+        line-height: 2em;
+    }
+    #texto-bem-vinde {
+        line-height: 1.2em;
+    }
+}
+
+@media screen and (max-width: 386px) {
+    #titulo-siga-nos-na-rede {
+        line-height: 1.5em;
+    }
+    #bem-vinde-container {
+        font-size: 0.6em;
+    }
+}
