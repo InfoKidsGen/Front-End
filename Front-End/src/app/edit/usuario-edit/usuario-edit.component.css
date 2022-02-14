@@ -1,3 +1,13 @@
 h1 {
     margin-left: 0 !important;
 }
+
+.validacao-ok {
+    color: green;
+}
+
+.validacao-negada {
+    color: red;
+    position: absolute;
+    margin-top: 2px;
+}

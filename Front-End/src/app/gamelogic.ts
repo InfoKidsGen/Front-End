@@ -17,7 +17,7 @@ gameStatus: Status;
     [0, 1, 0, 0, 1, 0, 0, 1, 0 ], // 2° coluna vertical
     [0, 0, 1, 0, 0, 1, 0, 0, 1 ], // 3° coluna vertical
     [1, 0, 0, 0, 1, 0, 0, 0, 1 ], // Diagonal esquerda para direita
-    [0, 0, 1, 0, 1, 0, 1, 0, 0 ]  // Diagonal direita para esquerda 
+    [0, 0, 1, 0, 1, 0, 1, 0, 0 ]  // Diagonal direita para esquerda
 ];
 
 winSituationsTwo: Array<Array<number>> = [
@@ -28,7 +28,7 @@ winSituationsTwo: Array<Array<number>> = [
     [0, 2, 0, 0, 2, 0, 0, 2, 0 ], // 2° coluna vertical
     [0, 0, 2, 0, 0, 2, 0, 0, 2 ], // 3° coluna vertical
     [2, 0, 0, 0, 2, 0, 0, 0, 2 ], // Diagonal esquerda para direita
-    [0, 0, 2, 0, 2, 0, 2, 0, 0 ]  // Diagonal direita para esquerda 
+    [0, 0, 2, 0, 2, 0, 2, 0, 0 ]  // Diagonal direita para esquerda
 ];
 
 
@@ -44,7 +44,7 @@ gameStart(): void {
     this.gameStatus = Status.START;
 }
 
-gameStop(): void{
+gameStop(): void {
     this.gameStatus = Status.STOP;
 }
 
@@ -61,16 +61,16 @@ setField(position: number, value: number): void{
 
 getPlayerColorClass(): string {
     const colorClass = (this.currentTurn === 2) ? 'player-two' : 'player-one';
-    return colorClass; 
+    return colorClass;
 }
 
-changePlayer(): void{
+changePlayer(): void {
     this.currentTurn = (this.currentTurn ===2) ? 1 : 2;
 }
 
 // Compara os arrays dos dois jogadores.
 arrayEquals(a: Array<any>, b: Array<any>): boolean{
-    return Array.isArray(a) && Array.isArray(b) && a.length === b.length && 
+    return Array.isArray(a) && Array.isArray(b) && a.length === b.length &&
     a.every((value, index) => value === b[index]);
 }
 
