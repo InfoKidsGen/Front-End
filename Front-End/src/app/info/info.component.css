@@ -26,6 +26,7 @@ p {
     background-repeat: none;
     width: 100vw;
     height: 70vh;
+    min-height: 500px;
 }
 
 #carousel-item-2 {
@@ -34,6 +35,7 @@ p {
     background-repeat: none;
     width: 100vw;
     height: 70vh;
+    min-height: 500px;
 }
 
 #carousel-item-3 {
@@ -42,6 +44,7 @@ p {
     background-repeat: none;
     width: 100vw;
     height: 70vh;
+    min-height: 500px;
 }
 
 #main-carousel-image {
@@ -77,6 +80,14 @@ p {
 #titulo-siga-nos-na-rede {
     color: white;
     font-size: 2.8em;
+}
+
+
+/* footer */
+
+.icon-footer {
+    width: 55px;
+    margin: -5px 3vw 30px 3vw;
 }
 
 
@@ -123,6 +134,12 @@ p {
     #infoKids {
         display: none;
     }
+    #carousel-item-2 {
+        align-items: center!important;
+    }
+    #carousel-item-3 {
+        align-items: center!important;
+    }
 }
 
 @media screen and (max-width: 681px) {
@@ -150,12 +167,6 @@ p {
     }
     .main-icons {
         max-width: 15vw;
-    }
-    #carousel-item-2 {
-        align-items: center!important;
-    }
-    #carousel-item-3 {
-        align-items: center!important;
     }
     #titulo-bem-vinde {
         line-height: 2em;

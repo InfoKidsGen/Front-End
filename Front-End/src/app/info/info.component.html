@@ -1,26 +1,59 @@
-<div class="body pb-5">
+<div class="body">
+
     <!-- Navbar -->
 
-    <div class="">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <!--brand (marca)-->
+        <a class="navbar-brand text-white" href="#">Infokids</a>
+
+        <!-- Botão Reponsvo toggler -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#encolhe-no-responsivo" aria-controls="encolhe-no-responsivo" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <!-- Botão Reponsvo toggler -->
+
+
+        <div class="collapse navbar-collapse" id="encolhe-no-responsivo">
+
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#objetivo">Objetivo</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/login">
+                        Entrar</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <div class="d-none">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand text-white" href="#">InfoKids</a>
+            <a class="navbar-brand text-white" href="#">Início</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-
+            <span class="navbar-toggler-icon"></span>
+            </button>
             <a class="navbar-brand text-white" href="#Objetivo">Objetivo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+            <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <a class="navbar-brand text-white" href="#InfoKids">InfoKids</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
 
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -92,7 +125,7 @@
     <!-- Carrosel -->
 
     <!-- Menu -->
-    <div id="Objetivo" class="container d-flex justify-content-around align-items-center card-texto-a-direita">
+    <div id="objetivo" class="container d-flex justify-content-around align-items-center card-texto-a-direita">
         <div class="col-md-4 card-image-container">
             <img class="mt-5 img" height="250" width="300" src="./../../assets/img/info/ODS16-1-1.jpg" alt="Foto do criador do conteúdo">
         </div>
@@ -186,7 +219,29 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <!--  iframe  -->
+    <div class="d-flex justify-content-center mb-5">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/jzlR5Dl6P48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+
+
+    <!--  footer  -->
+    <footer class="card text-center bg-dark mt-auto">
+        <div class="card-body">
+            <h5 class="card-title text-white">©Infokids 2022</h5>
+            <p class="card-text text-white">Fale com a gente:</p>
+        </div>
+        <div class="d-flex justify-content-center py-1">
+            <a href="#">
+                <img src="./../../assets/img/info/PNG_ICONS/github.png" alt="Github" class="img-fluid icon-footer">
+            </a>
+            <a href="#">
+                <img src="./../../assets/img/info/PNG_ICONS/facebook.png" alt="Facebook" class="img-fluid icon-footer">
+            </a>
+            <a href="#">
+                <img src="./../../assets/img/info/PNG_ICONS/instagram.png" alt="Instagram" class="img-fluid icon-footer">
+            </a>
+        </div>
+    </footer>
+
 </div>
