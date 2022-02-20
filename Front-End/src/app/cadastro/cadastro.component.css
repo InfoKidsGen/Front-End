@@ -3,6 +3,11 @@
     background: linear-gradient(90deg, rgba(161, 96, 254, 1) 0%, rgba(41, 178, 250, 1) 85%, rgba(46, 179, 250, 1) 100%);
 }
 
+.page-wrap {
+    position: fixed;
+    overflow-x: scroll;
+}
+
 .txt {
     font-size: 1.2rem;
     margin-bottom: 30px;
@@ -47,13 +52,74 @@
 .btncadas {
     color: #ededed;
     background-color: #343434;
-    width: 15px;
+    width: 9em;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+    margin-bottom: 15px;
 }
 
 .btncancel {
     color: #ededed;
     background-color: #6192ff;
-    width: 15px;
+    width: 9em;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+    margin-bottom: 15px;
+}
+
+
+/*    Responsivo    */
+
+@media screen and (max-width:1000px) {
+    #cadastro-titulo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .responsive-button-wrap {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .responsive-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .responsive-input-wrap {
+        width: 75vw;
+    }
+    .responsive-button-wrap {
+        justify-content: center!important;
+    }
+    .responsive-button-wrap button {
+        margin: 10px 4vw 15px 4vw;
+        line-height: 1em;
+        width: 9em;
+        height: 2.9em;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .txt {
+        font-size: 1rem;
+    }
+    .tx-cadastro {
+        font-size: 40px;
+    }
+    .responsive-button-wrap {
+        margin-top: -15px;
+        margin-bottom: 25px;
+        flex-direction: column;
+        justify-content: center!important;
+        align-items: center;
+    }
+    .responsive-button-wrap button {
+        margin: 10px 4vw 4px 4vw;
+        width: 60vw;
+        height: 2.7em;
+    }
 }

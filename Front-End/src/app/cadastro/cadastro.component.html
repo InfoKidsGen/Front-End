@@ -1,11 +1,11 @@
-<div class="container-fluid bg">
+<div class="container-fluid bg page-wrap">
 
     <div class="row d-flex justify-content-center" id="conteudo">
 
         <div class="col-md-8 mt-5">
 
             <div class="row">
-                <div class="col-md-12 d-flex justify-content-between align-items-center">
+                <div class="col-md-12 d-flex justify-content-between align-items-center" id="cadastro-titulo">
                     <div class="titulo mb-3">
                         <h1 class="tx-cadastro">Cadastro</h1>
                     </div>
@@ -17,33 +17,17 @@
 
 
             <form>
-                <div class="d-flex justify-content-between row">
-                    <div class="mb-3 col-md-5">
+                <div class="d-flex justify-content-between row responsive-form">
+                    <div class="mb-3 col-md-5 responsive-input-wrap">
                         <label for="usuario" class="form-label text-white">Nome Completo</label>
                         <input [(ngModel)]='usuario.nomeCompleto' type="text" class="form-control box w-100" id="nomeCompleto" name="nomeCompleto" placeholder="Digite o seu nome..." #name="ngModel" (focusout)='validaNome($event)'>
 
                         <div class="d-flex justify-content-end">
                             <div id="validaNome" class="validacao-negada"></div>
                         </div>
-
-
-                        <!--Validação de Inputs-->
-                        <!--
-                          required minlength="4"
-                          <div *ngIf="name.errors?.['required']">
-                            Name is required.
-                          </div>
-                        <div *ngIf="name.errors?.['minlength']">
-                            <span class="text-danger mb-0 mt-1 p-0">Name must be at least 4 characters long.</span>
-                        </div>
-                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert m-0 p-0" style="height: 0px;">
-                        </div> -->
-                        <!--Validação de Inputs-->
-
-
                     </div>
 
-                    <div class="mb-3 col-md-5">
+                    <div class="mb-3 col-md-5 responsive-input-wrap">
                         <label for="tipo" class="text-white">Tipo de usuário</label>
                         <select (change)='tipoUser($event)' (focusout)='validaTipo($event)' class="form-control w-100" name=" tipo" id="tipo">
                             <option selected >Escolha o tipo de perfil</option>
@@ -60,8 +44,8 @@
 
                 </div>
 
-                <div class="mb-3 row">
-                    <div class="col-md-12">
+                <div class="mb-3 row responsive-form">
+                    <div class="col-md-12 responsive-input-wrap">
                         <label for="email" class="form-label text-white d-flex">Email</label>
                         <input [(ngModel)]="usuario.email" type="email" class="form-control box w-100" id="email" name="email" placeholder="name@example.com" (focusout)='validaEmail($event)'>
                         <div class="d-flex justify-content-end">
@@ -73,8 +57,8 @@
                 </div>
 
 
-                <div class="row d-flex justify-content-between">
-                    <div class="mb-3 col-md-5">
+                <div class="row d-flex justify-content-between responsive-form">
+                    <div class="mb-3 col-md-5 responsive-input-wrap">
                         <label for="senha" class="form-label text-white">Senha</label>
                         <input (input)='confirmSenha($event)' (focusout)="validaSenha1($event)" type="password" class="form-control box w-100" id="senha" placeholder="Digite sua senha...">
                         <div class="d-flex justify-content-end">
@@ -83,7 +67,7 @@
 
                     </div>
 
-                    <div class="mb-3 col-md-5">
+                    <div class="mb-3 col-md-5  responsive-input-wrap">
                         <label for="senhaConfirm" class="form-label text-white">Confirma Senha</label>
                         <input [(ngModel)]='usuario.senha' type="password" class="form-control box w-100" id="senhaConfirm" name='senhaConfirm' placeholder="Confirme sua senha..." (focusout)="validaSenha2($event)">
                         <div class="d-flex justify-content-end">
@@ -93,8 +77,8 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="mb-3 col-md-12">
+                <div class="row responsive-form">
+                    <div class="mb-3 col-md-12 responsive-input-wrap">
                         <label for="linkDaImagem" class="form-label text-white">Foto de Perfil</label>
                         <input [(ngModel)]='usuario.foto' type="text" class="form-control box w-100" id="linkDaImagem" name='linkImagem' placeholder="Insira o link da sua imagem de perfil" (focusout)="validaLinkDaImagem($event)">
                         <div class="d-flex justify-content-end">
@@ -107,7 +91,7 @@
 
 
                 <div class="row mt-3">
-                    <div class="col-md-12 d-flex justify-content-around">
+                    <div class="col-md-12 d-flex justify-content-around  responsive-button-wrap">
                         <button (click)='cadastro()' class="btn btncadas col-md-3">
                           <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Cadastrar
                         </button>
